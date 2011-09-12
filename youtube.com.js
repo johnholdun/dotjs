@@ -7,7 +7,7 @@ $(function(){
   if (videoIdParts.length) {
     niceUrlParts.push(videoIdParts[1])
     niceUrlParts.push($('a.author').text())
-    niceUrlParts.push(document.title.replace(/[^A-Z0-9 \.]/gi,'').replace(/ +/g,'-').replace(/-youtube$/i, ""))
+    niceUrlParts.push(document.title.replace(/[^A-Z0-9 ]/gi,'').replace(/ +/g,'-').replace(/-youtube$/i, ""))
 
     $("<a>", {
       text: "Descriptive URL",
