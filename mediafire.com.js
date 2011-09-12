@@ -10,6 +10,10 @@ $(function() {
     width: "200px",
     margin: "0 auto"
   })
+  
+  setTimeout(function() {
+    $(".dl_startlink input[type=checkbox]").removeAttr("checked")    
+  }, 1500)
     
   try { QU() } catch(e) { }
   
