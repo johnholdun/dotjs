@@ -1,10 +1,12 @@
+// Copy Link
+
 $(function(){
   var
-    videoIdParts = document.location.href.match(/\?v=(.+?)(&|$)/),
+    videoIdParts = location.href.match(/\?v=(.+?)(&|$)/),
     videoId,
     niceUrlParts = ['http://youtu.be']
 
-  if (videoIdParts.length) {
+  if (videoIdParts && videoIdParts.length) {
     niceUrlParts.push(videoIdParts[1])
     niceUrlParts.push($('a.author').text())
     niceUrlParts.push(document.title.replace(/[^A-Z0-9 ]/gi,'').replace(/ +/g,'-').replace(/-youtube$/i, ""))
@@ -19,3 +21,20 @@ $(function(){
   }
 })
   
+  
+// Strip it down
+
+if (location.hash.indexOf("full") === -1)
+  $(function() {
+    $("body").css({
+      overflowX: "hidden",
+      overflowY: "scroll"    
+    })
+
+    $("#masthead, #baseDiv").css({
+      width: "640px !important"
+    })
+
+    $("#masthead-utility, #user-navbar, .ad-div, #homepage-side-content, .top-videos-module, #footer-container")
+      .remove()  
+  })
