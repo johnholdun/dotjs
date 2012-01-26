@@ -18,9 +18,9 @@ $(function(){
       text: videoTitle,
       title: "Descriptive URL",
       href: niceUrl,
-      style: "display: block; float: right; width: 24px; height: 24px; margin-top: -30px; overflow: hidden; text-indent: -999px; background: url('http://i.imgur.com/wucK0.png') no-repeat center center;"
+      style: "display: inline-block; width: 32px; line-height: 32px; overflow: hidden; text-indent: -999px; background: url('http://i.imgur.com/wucK0.png') no-repeat center center;"
     })
-      .insertBefore($("#watch-description"))
+      .appendTo($("#watch-actions"))
   }
 })
   
