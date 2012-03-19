@@ -7,7 +7,8 @@ $(function() {
   if (desc.match(/\bthis\b/i)) {
     t = desc.replace(/\bthis\b/i, t)
   } else {
-    t += " is my jam. " + desc
+    t += " is my jam."
+    if (desc.length) t += " " + desc
   }
      
   url = "https://twitter.com/intent/tweet?text=" + encodeURIComponent(t) + "&url=" + encodeURIComponent(location.href.replace(/(www\.|\/$)/, ""))
