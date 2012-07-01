@@ -29,24 +29,17 @@ $(function(){
 
 if (location.pathname === "/" && location.hash.indexOf("full") === -1)
   $(function() {
-    $("body").css({
-      background: "#FFF",
-      overflowX: "hidden",
-      overflowY: "scroll"    
-    })
-    
-    $(".ad-div, .guide-container, .guide-background, #feed-background, #video-sidebar, #footer, #logo-container ~ *, .feed-header")
-      .remove()
-      
-    $("#masthead")
-      .css("text-align", "center")
-
-    $("#logo-container")
-      .css({ display: "inline-block", float: "none" })
-      
-    $("#feed")
-      .css({
-        "margin": "0 auto"
-      })
-      
+    $("body").append($("<style>").html("\
+      body { background: #FFF; overflow: hidden scroll; }\
+      #guide, .branded-page-v2-primary-col-header-container, .feed-filter-v2, .branded-page-v2-secondary-col, #footer, .ad-div, .metadata, .feed-author-bubble, .feed-item-time, #masthead-nav, #masthead-user-bar-container\
+        { display: none !important; }\
+      #masthead { width: 430px; margin: 0 auto; }\
+      #masthead-search-bar-container { padding-right: 0; }\
+      #content { width: 490px; margin: 0 auto; }\
+      .branded-page-v2-primary-col, .branded-page-v2-container.has-top-row { border: none !important; box-shadow: none !important; }\
+      .feed-item-main h4 { overflow: visible; max-height: 100%; }\
+      .feed-item-header { text-indent: 999em; height: 1em; margin-left: 195px; overflow: hidden; }\
+      .feed-item-thumb { margin-top: -24px; }\
+      .feed-item-owner { display: block; text-indent: 0; }\
+    "))      
   })
